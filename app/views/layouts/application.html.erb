@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ItTakesAVillage</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if session[:current_user_id] %>
+    <nav>
+      <%= link_to "Home", root_url %>
+      <%= link_to "Log Out", login_path(0),
+                  :data => {:method => "delete"}%>
+                </nav>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %>
+    <% end %>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+    <%= yield %>
+  </body>
+</html>
