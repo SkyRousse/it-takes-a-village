@@ -6,6 +6,6 @@ describe "create a new user process" do
     fill_in 'Email', :with => "TestUserEmail@gmail.com"
     fill_in 'Password', :with => "abcde1234"
     click_on 'Create User'
-    expect(page).to have_content 'It Takes a Village'
+    expect(page).to have_content 'Welcome!'
   end
 end

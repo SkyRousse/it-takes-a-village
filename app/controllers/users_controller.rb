@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def show
+
+  end
+
   def new
     @user = User.new
   end
@@ -8,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:current_user_id] = @user.id
-      redirect_to root_url
+      redirect_to user_path(@user)
     else
       render new
     end

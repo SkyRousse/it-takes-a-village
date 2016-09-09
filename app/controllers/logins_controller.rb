@@ -9,7 +9,7 @@ class LoginsController < ApplicationController
     if user && user.authenticate(params[:password])
       flash[:notice] = "You have been logged in"
       session[:current_user_id] = user.id
-      redirect_to root_url
+      redirect_to user_path(user)
     else
       flash[:notice] = "There was a problem logging in, please try again"
       render :new
