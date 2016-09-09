@@ -1,0 +1,19 @@
+<%= render "layouts/errors", :object => @user %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+  <%= f.label :profile_pic %>
+  <%= f.text_field :profile_pic %>
+  <%= f.label :skills %>
+  <%= f.text_field :skills %>
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+  <%= f.label :likes_to %>
+  <%= f.text_field :likes_to %>
+  <%= f.submit  %>
+<% end %>
